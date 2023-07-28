@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.totoro.demo.mapper.UserMapper">
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.totoro.demo.entity.UserEntity">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="rear_name" property="rearName" />
+        <result column="password" property="password" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="ALLColumn">
+        `id`, `username`, `rear_name`, `password`, `create_time`, `update_time`
+    </sql>
+
+    <select id="selectUserPage" resultMap="BaseResultMap">
+        SELECT
+            t1.`id`, t1.`username`, t1.`rear_name`, t1.`password`, t1.`create_time`, t1.`update_time`
+        FROM `user` t1
+        WHERE t1.`is_delete` = false 
+        <if test="params.id != null"> AND t1.`id` = #{params.id} </if>
+        <if test="params.username != null"> AND t1.`username` = #{params.username} </if>
+        <if test="params.rearName != null"> AND t1.`rear_name` = #{params.rearName} </if>
+        <if test="params.password != null"> AND t1.`password` = #{params.password} </if>
+        <if test="params.createTime != null"> AND t1.`create_time` = #{params.createTime} </if>
+        <if test="params.updateTime != null"> AND t1.`update_time` = #{params.updateTime} </if>
+        <if test="params.sortColumn != null and params.sortDirection != null">
+            order by concat('`',${params.sortColumn},'`') ${params.sortDirection.title}
+        </if>
+    </select>
+
+</mapper>
