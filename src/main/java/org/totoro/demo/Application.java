@@ -6,10 +6,10 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan(value = "org.totoro")
 @SpringBootApplication
-public class TotoroDemoApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(TotoroDemoApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }
