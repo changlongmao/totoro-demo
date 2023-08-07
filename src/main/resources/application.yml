@@ -22,6 +22,7 @@ mybatis-plus:
       #逻辑未删除值
       logic-not-delete-value: 0
 
+# 访问/actuator节点的web端口，与当前服务端口号独立，防止项目信息泄漏
 management:
   server:
     port: 19101
