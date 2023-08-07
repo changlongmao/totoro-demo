@@ -55,7 +55,7 @@ public class GeneratorCodeBoot {
         ControllerConfig controllerConfig = ControllerConfig.builder()
                 .build();
 
-        // 生成代码
+        // 生成代码，不填写config则不生成对应的代码
         GeneratorProcessor.process(baseConfig, entityConfig, mapperConfig, serviceConfig, controllerConfig);
     }
 
