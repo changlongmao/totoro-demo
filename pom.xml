@@ -18,6 +18,7 @@
             <groupId>org.totoro</groupId>
             <artifactId>totoro-core</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.totoro</groupId>
             <artifactId>totoro-generator</artifactId>
@@ -26,7 +27,12 @@
     </dependencies>
 
     <build>
+        <finalName>totoro-demo</finalName>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
             <!-- deploy skip source jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
