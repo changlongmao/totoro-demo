@@ -63,4 +63,6 @@ public interface UserService extends IService<UserEntity> {
      * @return 删除结果
      */
     boolean delete(String id);
+
+    void saveES(UserReqDTO userReqDTO);
 }

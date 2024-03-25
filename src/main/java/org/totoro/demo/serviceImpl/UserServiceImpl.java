@@ -3,6 +3,7 @@ package org.totoro.demo.serviceImpl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.totoro.common.util.ObjectUtil;
 import org.totoro.demo.mapper.UserMapper;
 import org.totoro.demo.entity.UserEntity;
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author ChangLF 2023/07/28
  */
+@Slf4j
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> implements UserService {
 
@@ -61,6 +63,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserEntity> impleme
     @Override
     public boolean delete(String id) {
         return this.removeById(id);
+    }
+
+    @Override
+    public void saveES(UserReqDTO reqDTO) {
+        UserEntity copy = ObjectUtil.copy(reqDTO, UserEntity.class);
     }
 
 }

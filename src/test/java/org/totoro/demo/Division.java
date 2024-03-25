@@ -19,13 +19,13 @@ public class Division {
 
     public static void main(String[] args) {
         // 项目全名
-        final String projectName = "totoro-example";
+        final String projectName = "totoro-division";
 
         // 项目中文名
-        final String cnModuleName = "totoro范例项目";
+        final String cnModuleName = "totoro分裂项目母体";
 
         // 基础包名
-        final String packageName = "org.totoro.example";
+        final String packageName = "org.totoro.division";
 
         final File stemDirectory = MavenPathProcessor.findMavenProject(Division.class).toFile();
 

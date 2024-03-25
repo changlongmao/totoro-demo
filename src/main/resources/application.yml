@@ -6,7 +6,7 @@ spring:
     include: common
 
 server:
-  port: 9101
+  port: 9102
 
 mybatis-plus:
   typeAliasesPackage: org.totoro.demo.entity

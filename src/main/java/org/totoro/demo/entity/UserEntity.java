@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 import lombok.EqualsAndHashCode;
 import com.baomidou.mybatisplus.annotation.TableLogic;
+
 import java.util.Date;
 
 /**
@@ -26,7 +27,6 @@ public class UserEntity extends Model<UserEntity> {
      * id
      */
     @TableId
-    @TableField("id")
     private String id;
 
     /**
